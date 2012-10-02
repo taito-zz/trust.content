@@ -13,13 +13,13 @@ class TrustContentLayer(PloneSandboxLayer):
     def setUpZope(self, app, configurationContext):
         """Set up Zope."""
         # Load ZCML
-        import trust.template
-        self.loadZCML(package=trust.template)
+        import trust.content
+        self.loadZCML(package=trust.content)
 
     def setUpPloneSite(self, portal):
         """Set up Plone."""
         # Install into Plone site using portal_setup
-        self.applyProfile(portal, 'trust.template:default')
+        self.applyProfile(portal, 'trust.content:default')
 
     def tearDownZope(self, app):
         """Tear down Zope."""
